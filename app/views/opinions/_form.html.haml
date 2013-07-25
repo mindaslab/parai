@@ -1,0 +1,16 @@
+= form_for @opinion do |f|
+  - if @opinion.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@opinion.errors.count, "error")} prohibited this opinion from being saved:"
+      %ul
+        - @opinion.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :topic
+    = f.text_field :topic
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Content:
+  = @opinion.content
+%p
+  %b Topic:
+  = @opinion.topic
+
+= link_to 'Edit', edit_opinion_path(@opinion)
+\|
+= link_to 'Back', opinions_path
